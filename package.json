@@ -1,0 +1,14 @@
+{
+  "name": "nodedaemon",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.15.0",
+    "cheerio": "^0.22.0",
+    "events": "^1.1.1",
+    "fs": "^0.0.1-security",
+    "lodash": "^4.16.4",
+    "node-notifier": "^4.6.1"
+  }
+}
