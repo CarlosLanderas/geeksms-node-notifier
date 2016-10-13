@@ -33,5 +33,7 @@ The following libraries have been used to create this project:
 
 
 npm install
+
 npm install forever -g
+
 forever start boot.js (To daemonize execution)
