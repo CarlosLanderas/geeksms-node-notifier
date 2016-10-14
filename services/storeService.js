@@ -33,7 +33,21 @@ class StoreService extends EventEmitter {
             }
             
         });
+    }    
+    createStoreFile(contents) {
+        this.getPostStore().then(previousStore => {
+            
+            fs.writeFile(this.storePath, contents, err => {
+                if (err) {
+                    notificationService.notify("Error writing file", "Error");
+                }
+                else {
+                    this.emit(EventTypes.STORE_CHANGED, { previous: previousStore, current: JSON.parse(contents) });
+                }
+            });
+        });
     }
+
     isFileStoreCreated() {
         return fs.existsSync(this.storePath);
     }
@@ -46,21 +60,6 @@ class StoreService extends EventEmitter {
     }
     createStoreDirectory() {
         fs.mkdirSync(this.storeDirectory, AppConfig.DIRECTORY_PERMISION);
-    }
-
-    createStoreFile(contents) {
-        this.getPostStore().then(previousStore => {
-
-            fs.writeFile(this.storePath, contents, err => {
-                if (err) {
-                    notificationService.notify("Error writing file", "Error");
-                }
-                else {
-                    this.emit(EventTypes.STORE_CHANGED, { previous: previousStore, current: JSON.parse(contents) });
-                }
-            });
-
-        });
     }
 }
 
