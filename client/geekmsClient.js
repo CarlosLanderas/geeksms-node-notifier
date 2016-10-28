@@ -1,12 +1,15 @@
 "use strict";
 const axios = require('axios');
-const GEEK_URL = require('../config/appConfig').GEEKMS_URL;
+const appClients = require('../config/appClients');
+const appConfig = require('../config/appConfig');
 
 class GeekMsClient {
-    constructor(){}
+    constructor(){
+        this.url = appClients[appConfig.CLIENT].url;
+    }
     get() {
         return new Promise( (resolve, reject) => {
-            axios.get(GEEK_URL).then( (response) => {
+            axios.get(this.url).then( (response) => {
                 resolve(response.data);
             }).catch( (error)=> {
                 reject(error);

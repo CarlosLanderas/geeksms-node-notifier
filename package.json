@@ -9,6 +9,7 @@
     "events": "^1.1.1",
     "fs": "^0.0.1-security",
     "lodash": "^4.16.4",
-    "node-notifier": "^4.6.1"
+    "node-notifier": "^4.6.1",
+    "xml2js": "^0.4.17"
   }
 }

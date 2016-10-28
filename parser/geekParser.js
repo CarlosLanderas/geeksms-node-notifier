@@ -6,8 +6,10 @@ class GeekParser {
         this.cherioDom = cheerio.load(htmlSource);
     }
     getPosts(){
-        let postBlocks = this.cherioDom('.' + CrawlerSelectors.POST_BLOCK);        
-        return this.parsePosts(postBlocks);        
+        return new Promise( (resolve,reject) => {
+            let postBlocks = this.cherioDom('.' + CrawlerSelectors.POST_BLOCK);        
+            resolve(this.parsePosts(postBlocks));
+        });                
     }
     parsePosts(postBlocks){
         let parsedPosts = [];   
