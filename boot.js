@@ -1,2 +1,2 @@
 const Main = require('./main');
-new Main().Run();
+new Main().run();

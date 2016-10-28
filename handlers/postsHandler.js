@@ -13,7 +13,8 @@ class PostsHandler {
     }
 
     previousStoreExists(store){
-        return store.previous !== undefined  && store.previous.length > 0;
+        return store.previous !== null  && 
+        store.previous.length > 0;
     }
 }
 

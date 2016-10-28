@@ -22,22 +22,22 @@ class Main {
         return require(parserPath + AppClients[AppConfig.CLIENT].parser);
     }
     /*Entry Point*/
-    Run() {
+    run() {
         geekMsClient.get().then(response => {
             let parser = new (this.getConfiguredParser())(response);
 
             let parsedPosts = parser.getPosts().then(result => {
                 this.storeService.createStoreFile(JSON.stringify(result, null, 4));
-                this.NotifyLastPost(parsedPosts);
+                this.notifyLastPost(parsedPosts);
             });          
         });
 
         setTimeout(() => {
-            this.Run();
+            this.run();
         }, AppConfig.CRAWL_INTERVAL);
     }
     
-    NotifyLastPost(parsedPosts) {
+    notifyLastPost(parsedPosts) {
         if (!lastNotified) {
             let lastPost = parsedPosts[0];
             notificationService.notify(lastPost.title, 'Last Post : ' + lastPost.author);
