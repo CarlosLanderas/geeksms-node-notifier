@@ -6,16 +6,18 @@ GeekMs node notifier is a project developed with Node using javascript ES6
 
 ![alt tag](https://raw.githubusercontent.com/carloslanderas/geekms-node-notifier/master/images/sampleimage.png)
 
-
+<br/><br/>
 
 The program queries the geek ms blog site and show a popup notification whenever a new post has been added.
 
+<br/><br/>
 
 
 **UPDATE:** Rss has been added to Geeks blogs and a new client for XML has been added to notifier.
 
 To swap parsers (HTML or XML) use the config file:
 
+<br/><br/>
 
 ```javascript
 module.exports = {    
@@ -44,6 +46,7 @@ module.exports = {
 ```
 
 
+<br/><br/>
 
 Crawling interval, temporal store path and file can be configured in config/appConfig.js settings.
 
@@ -64,9 +67,11 @@ The following libraries have been used to create this project:
 - node-notifier
 
 
+<br/><br/>
 
 **Installation:**
 
+<br/><br/>
 
 npm install
 
