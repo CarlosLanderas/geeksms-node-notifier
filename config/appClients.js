@@ -4,7 +4,7 @@ module.exports = {
             url: "http://geeks.ms/blogs"
         },
         xmlClient: {
-            parser: "GeekXMLParser",
+            parser: "GeekRSSParser",
             url: "http://geeks.ms/rss/mainfeed"
         }
     }

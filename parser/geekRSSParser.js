@@ -1,7 +1,7 @@
 "use strict";
 const parseString = require('xml2js').parseString;
 
-class GeekXMLParser {
+class GeekRSSParser {
     constructor(source) {
         this.xml = source;
     }
@@ -28,4 +28,4 @@ class GeekXMLParser {
     
 }
 
-module.exports = GeekXMLParser
+module.exports = GeekRSSParser
