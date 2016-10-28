@@ -8,7 +8,9 @@ GeekMs node notifier is a project developed with Node using javascript ES6
 
 
 
-The program queries the geek ms blog site and show a popup notification whenever a new post has been added:
+The program queries the geek ms blog site and show a popup notification whenever a new post has been added.
+
+
 
 **UPDATE:** Rss has been added to Geeks blogs and a new client for XML has been added to notifier.
 
@@ -27,6 +29,7 @@ module.exports = {
 ```
 
 
+
 **Current Clients**:
 ```javascript
 
@@ -38,7 +41,7 @@ module.exports = {
             parser: "geelRSSParser",
             url: "http://geeks.ms/rss/mainfeed"
         }
-
+```
 
 
 
