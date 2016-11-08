@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/CarlosLanderas/GeekMs-Node-Notifier.svg?branch=develop)](https://travis-ci.org/CarlosLanderas/GeekMs-Node-Notifier)
+
+<br/>
+
 **GEEK MS NODE NOTIFIER**
 
 GeekMs node notifier is a project developed with Node using javascript ES6
