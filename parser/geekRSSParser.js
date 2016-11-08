@@ -3,11 +3,14 @@ const parseString = require('xml2js').parseString;
 
 class GeekRSSParser {
     constructor(source) {
-        this.xml = source;
+        this.xml = source;        
     }
     getPosts(){
         return new Promise( (resolve,reject) => {
-            parseString(this.xml, (err,result)=> {
+            parseString(this.xml, (err,result)=> {      
+                if(err){
+                    reject(err);
+                }                          
                 resolve(this.parsePosts(result));
            });
         });       

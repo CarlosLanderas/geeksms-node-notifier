@@ -4,17 +4,12 @@ const appClients = require('../config/appClients');
 const appConfig = require('../config/appConfig');
 
 class GeekMsClient {
-    constructor(){
+    constructor(httpClient){
         this.url = appClients[appConfig.CLIENT].url;
+        this.httpClient = httpClient;
     }
-    get() {
-        return new Promise( (resolve, reject) => {
-            axios.get(this.url).then( (response) => {
-                resolve(response.data);
-            }).catch( (error)=> {
-                reject(error);
-            });
-        });   
+    get() {        
+        return this.httpClient.get(this.url);
     }
 }
-module.exports = new GeekMsClient();
+module.exports = GeekMsClient;

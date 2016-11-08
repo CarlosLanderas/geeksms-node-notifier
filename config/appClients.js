@@ -1,10 +1,10 @@
 module.exports = {
         htmlClient : {
-            parser: "GeekParser",
+            parser: "geekParser",
             url: "http://geeks.ms/blogs"
         },
         xmlClient: {
-            parser: "GeekRSSParser",
+            parser: "geekRSSParser",
             url: "http://geeks.ms/rss/mainfeed"
         }
     }

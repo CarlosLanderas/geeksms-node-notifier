@@ -1,12 +1,13 @@
-"use strict";
+
 const parserPath = "./parser/";
 const notificationService = require('./services/notificationService');
-const geekMsClient = require('./client/geekMsClient');
+const GeekMsClient = require('./client/geekMsClient');
 const StoreService = require('./services/storeService');
 const PostsHandler = require('./handlers/postsHandler');
 const EventTypes = require('./constants/events');
 const AppConfig = require('./config/appConfig');
-const AppClients = require('./config/appClients');
+const parserFactory = require('./parser/parserFactory');
+const httpClient = require('./client/httpClient');
 let lastNotified = false;
 
 class Main {
@@ -17,14 +18,12 @@ class Main {
             this.postsHandler.process(store);
         });
     }
-
-    getConfiguredParser(){
-        return require(parserPath + AppClients[AppConfig.CLIENT].parser);
-    }
+    
     /*Entry Point*/
     run() {
+        let geekMsClient = new GeekMsClient(httpClient);
         geekMsClient.get().then(response => {
-            let parser = new (this.getConfiguredParser())(response);
+            let parser = new (parserFactory())(response);
 
             let parsedPosts = parser.getPosts().then(result => {
                 this.storeService.createStoreFile(JSON.stringify(result, null, 4));
