@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/CarlosLanderas/GeekMs-Node-Notifier.svg?branch=develop)](https://travis-ci.org/CarlosLanderas/GeekMs-Node-Notifier)
+[![Build Status](https://travis-ci.org/CarlosLanderas/GeekMs-Node-Notifier.svg?branch=master)](https://travis-ci.org/CarlosLanderas/GeekMs-Node-Notifier)
 
 <br/>
 
