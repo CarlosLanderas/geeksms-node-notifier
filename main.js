@@ -17,9 +17,8 @@ class Main {
         this.storeService.on(EventTypes.STORE_CHANGED, (store) => {
             this.postsHandler.process(store);
         });
-    }
+    }    
     
-    /*Entry Point*/
     run() {
         let geekMsClient = new GeekMsClient(httpClient);
         geekMsClient.get().then(response => {
