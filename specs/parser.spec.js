@@ -42,14 +42,12 @@ describe('The htmlParser', function(){
                 expect(posts[5].title.trim()).equal('[Podcast] Xamarin: Mitos y verdades');
                 expect(posts[5].author).equal('Javier Suárez Ruiz');
                 done();
-                
+
             }).catch( err=> console.log(err));
         });
     });
 
 });
-
-
 
 function getTestContent(filePath) {
     return new Promise((resolve, reject) => {
